@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DirectX11Engine", "DirectX11Engine\DirectX11Engine.vcxproj", "{EFF57C81-E532-4598-B3B6-2A79B2083029}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OBJConverter", "OBJConverter\OBJConverter.vcxproj", "{2DB54E86-2ECC-48FA-8536-DEFB00A40DE7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EFF57C81-E532-4598-B3B6-2A79B2083029}.Debug|Win32.ActiveCfg = Debug|Win32
+		{EFF57C81-E532-4598-B3B6-2A79B2083029}.Debug|Win32.Build.0 = Debug|Win32
+		{EFF57C81-E532-4598-B3B6-2A79B2083029}.Release|Win32.ActiveCfg = Release|Win32
+		{EFF57C81-E532-4598-B3B6-2A79B2083029}.Release|Win32.Build.0 = Release|Win32
+		{2DB54E86-2ECC-48FA-8536-DEFB00A40DE7}.Debug|Win32.ActiveCfg = Debug|Win32
+		{2DB54E86-2ECC-48FA-8536-DEFB00A40DE7}.Debug|Win32.Build.0 = Debug|Win32
+		{2DB54E86-2ECC-48FA-8536-DEFB00A40DE7}.Release|Win32.ActiveCfg = Release|Win32
+		{2DB54E86-2ECC-48FA-8536-DEFB00A40DE7}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
