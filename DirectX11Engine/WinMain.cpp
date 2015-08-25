@@ -17,12 +17,12 @@ HWND Hwnd = 0;
 int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE prevInstance, LPWSTR cmdLine, int cmdShow)
 {
 	HInstance = hInstance;
-	//Prevent warning from compiler.
+	//Prevent warning from compiler
 	UNREFERENCED_PARAMETER(prevInstance);
 	UNREFERENCED_PARAMETER(hInstance);
 	UNREFERENCED_PARAMETER(cmdLine);
 
-	//Register window class (involved in style setting)
+	//Register window class involved in style setting
 	WNDCLASSEX wndClass = { 0 };
 	wndClass.cbSize = sizeof(WNDCLASSEX);
 	wndClass.style = CS_HREDRAW | CS_VREDRAW;
@@ -65,14 +65,15 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE prevInstance, LPWSTR cmdLine,
 		}
 		else
 		{
-			//Determine the time that last frame cost.
+			//Determine the time that last frame cost
 			static DWORD d1, d2;
 			static float dt;
 			d1 = GetTickCount();
-			//Update and render game.
+			//Update and render game
 			myDemo->Update(dt);
 			myDemo->Render(dt);
 			d2 = GetTickCount();
+			//Fix time step
 			while (d2 - d1 < 500.0 / GameFrameRate)
 			{
 				Sleep(1);
@@ -87,7 +88,7 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE prevInstance, LPWSTR cmdLine,
 
 LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
-	switch (message)
+	switch (message) 
 	{
 	case WM_DESTROY:
 		PostQuitMessage(0);

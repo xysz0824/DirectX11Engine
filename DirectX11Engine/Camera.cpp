@@ -6,8 +6,8 @@ void Camera::Init(XMFLOAT3 pos, XMFLOAT3 target, UINT width, UINT height, FLOAT 
 	_aspectRatio = (float)width / height;
 	_nearZ = nearZ;
 	_farZ = farZ;
-	SetPosition(pos);
-	SetTarget(target);
+	this->SetPosition(pos);
+	this->SetTarget(target);
 	_up = XMFLOAT3(0, 1, 0);
 }
 

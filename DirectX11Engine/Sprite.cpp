@@ -20,7 +20,7 @@ Sprite::Sprite()
 
 Sprite::~Sprite()
 {
-	Release();
+	this->Release();
 }
 
 bool Sprite::Init(Game* game, Texture2D* texture)
@@ -149,7 +149,7 @@ void Sprite::Draw(bool useSolidShader)
 	_texture->UpdateColorMapAndSampler();
 
 	//Calculate world-view-projection matrix and update to buffer
-	UpdateWorldViewProjectionMatrix();
+	this->UpdateWorldViewProjectionMatrix();
 
 	//Draw texture mesh
 	_mesh.Draw();
@@ -168,7 +168,7 @@ void Sprite::DrawInstanced(UINT totalInstances, bool useSolidShader)
 	_texture->UpdateColorMapAndSampler();
 
 	//Calculate world-view-projection matrix and update to buffer.
-	UpdateWorldViewProjectionMatrix(false);
+	this->UpdateWorldViewProjectionMatrix(false);
 
 	//Draw instanced texture mesh
 	_mesh.DrawInstanced(totalInstances);

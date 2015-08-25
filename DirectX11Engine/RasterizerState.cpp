@@ -46,7 +46,7 @@ RasterizerState::RasterizerState(FillMode fillMode, CullMode cullMode, bool fron
 
 RasterizerState::~RasterizerState()
 {
-	Release();
+	this->Release();
 }
 
 void RasterizerState::Release()
@@ -57,18 +57,18 @@ void RasterizerState::Release()
 
 void RasterizerState::SetFillMode(FillMode fillMode)
 {
-	Release();
+	this->Release();
 	_fillMode = fillMode;
 }
 
 void RasterizerState::SetCullMode(CullMode cullMode)
 {
-	Release();
+	this->Release();
 	_cullMode = cullMode;
 }
 
 void RasterizerState::SetFronterCounterClockwise(bool value)
 {
-	Release();
+	this->Release();
 	_fronterCounterClockwise = value;
 }

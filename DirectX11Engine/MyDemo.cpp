@@ -12,7 +12,7 @@ MyDemo::~MyDemo()
 
 bool MyDemo::LoadContent()
 {
-	SetProfileDisplay(true);
+	this->SetProfileDisplay(true);
 	//Load texture and init sprite.
 	_texture.Load(this, "Wood.dds");
 	_renderTexture.Create(this, GetViewportWidth(), GetViewportHeight());
@@ -29,7 +29,7 @@ bool MyDemo::LoadContent()
 	_effect.Load(this, "Model.fx", inputElements, ARRAYSIZE(inputElements));
 	//Create constant buffer to shader for mvp.
 	_effect.CreateConstantBuffer(0, sizeof(XMMATRIX));
-	_effect.CreateConstantBuffer(1, sizeof(XMFLOAT4));
+	//_effect.CreateConstantBuffer(1, sizeof(XMFLOAT4));
 	
 	//Load mesh.
 	_mesh.LoadCylinder(this, 100, 100, false);
@@ -54,27 +54,27 @@ static float h = 0;
 
 void MyDemo::Update(float dt)
 {
-	UpdateInputState();
+	this->UpdateInputState();
 	if (IsKeyDown(DIK_UP)) h++;
 	if (IsKeyDown(DIK_DOWN)) h--;
 	if (IsKeyDown(DIK_LEFT)) angle--;
 	if (IsKeyDown(DIK_RIGHT)) angle++;
 	_camera.SetPosition(XMFLOAT3(5 * cos(angle / 180 * XM_PI), 2 * sin(h / 180 * XM_PI), 5 * sin(angle / 180 * XM_PI)));
-	SaveInputState();
+	this->SaveInputState();
 }
 
 void MyDemo::Draw(float dt)
 {
 	//Clear screen
 	Color clearColor = { 0.0f, 0.0f, 0.25f, 1.0f };
-	ClearScreen(clearColor);
+	this->ClearScreen(clearColor);
 	//SetRenderTarget(&_renderTexture, clearColor);
 
 	//Set shaders
 	XMMATRIX mvp = _camera.GetViewProjecitonMatrix();
 	_effect.SetConstantBuffer(0, &mvp);
-	XMFLOAT3 viewPos = _camera.GetPosition();
-	_effect.SetConstantBuffer(1, &viewPos);
+	//XMFLOAT3 viewPos = _camera.GetPosition();
+	//_effect.SetConstantBuffer(1, &viewPos);
 	_effect.UpdateShader(0, 0);
 	//Draw meshes
 	_texture.UpdateColorMapAndSampler();

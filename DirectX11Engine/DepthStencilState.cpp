@@ -45,7 +45,7 @@ DepthStencilState::DepthStencilState(bool depthEnable, bool stencilEnable,
 
 DepthStencilState::~DepthStencilState()
 {
-	Release();
+	this->Release();
 }
 
 void DepthStencilState::Release()
@@ -56,35 +56,35 @@ void DepthStencilState::Release()
 
 void DepthStencilState::SetDepthEnable(bool depthEnable)
 {
-	Release();
+	this->Release();
 	_depthEnable = depthEnable;
 }
 
 void DepthStencilState::SetStencilEnable(bool stencilEnable)
 {
-	Release();
+	this->Release();
 	_stencilEnable = stencilEnable;
 }
 
 void DepthStencilState::SetStencilFunction(StencilFunction stencilFunc)
 {
-	Release();
+	this->Release();
 	_stencilFunc = stencilFunc;
 }
 
 void DepthStencilState::SetStencilFailOp(StencilOperation stencilFailOp)
 {
-	Release();
+	this->Release();
 	_stencilFailOp = stencilFailOp;
 }
 void DepthStencilState::SetStencilDepthFailOp(StencilOperation stencilDepthFailOp)
 {
-	Release();
+	this->Release();
 	_stencilDepthFailOp = stencilDepthFailOp;
 }
 
 void DepthStencilState::SetStencilPassOp(StencilOperation stencilPassOp)
 {
-	Release();
+	this->Release();
 	_stencilPassOp = stencilPassOp;
 }

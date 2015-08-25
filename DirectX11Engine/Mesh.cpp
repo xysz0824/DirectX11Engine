@@ -21,7 +21,7 @@ Mesh::Mesh()
 
 Mesh::~Mesh()
 {
-	Release();
+	this->Release();
 }
 
 bool Mesh::Load(Game* game, const void* vertices, UINT vertexSize, UINT totalVertices, 
@@ -68,7 +68,7 @@ bool Mesh::LoadIndexed(Game* game, const void* vertices, UINT vertexSize, UINT t
 {
 	_totalIndices = totalIndices;
 
-	bool result = Load(game, vertices, vertexSize, totalVertices, topology, dynamic);
+	bool result = this->Load(game, vertices, vertexSize, totalVertices, topology, dynamic);
 	if (!result)
 		return false;
 	//Create index buffer
@@ -129,7 +129,7 @@ bool Mesh::LoadFromFile(Game* game, const char* filePath, bool dynamic)
 		indices[i] = (WORD)index.i - 1;
 	}
 	fs.close();
-	bool result = LoadIndexed(game, vertices, sizeof(NormalVertex), vertexCount.i,
+	bool result = this->LoadIndexed(game, vertices, sizeof(NormalVertex), vertexCount.i,
 		D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST, indices, indexCount.i, dynamic);
 	delete[] vertices;
 	delete[] indices;
@@ -196,7 +196,7 @@ bool Mesh::LoadColumn(Game* game, int slice, int stack, float (*f)(float), XMFLO
 			tmp += 6;
 		}
 	}
-	bool result = LoadIndexed(game, vertices, sizeof(ColorVertex), totalVertices,
+	bool result = this->LoadIndexed(game, vertices, sizeof(ColorVertex), totalVertices,
 		D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST, indices, totalIndices, dynamic);
 	delete[] vertices;
 	delete[] indices;
@@ -205,7 +205,7 @@ bool Mesh::LoadColumn(Game* game, int slice, int stack, float (*f)(float), XMFLO
 
 bool Mesh::LoadSphere(Game* game, int slice, int stack, XMFLOAT4 color, bool dynamic)
 {
-	return LoadColumn(game, slice, stack, [](float x)->float {return sin(x); }, color, dynamic);
+	return this->LoadColumn(game, slice, stack, [](float x)->float {return sin(x); }, color, dynamic);
 }
 
 bool Mesh::LoadSphere(Game* game, int slice, int stack, bool dynamic)
@@ -248,7 +248,7 @@ bool Mesh::LoadSphere(Game* game, int slice, int stack, bool dynamic)
 			tmp += 6;
 		}
 	}
-	bool result = LoadIndexed(game, vertices, sizeof(NormalVertex), totalVertices,
+	bool result = this->LoadIndexed(game, vertices, sizeof(NormalVertex), totalVertices,
 		D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST, indices, totalIndices, dynamic);
 	delete[] vertices;
 	delete[] indices;
@@ -309,7 +309,7 @@ bool Mesh::LoadCylinder(Game* game, int slice, int stack, bool dynamic)
 			tmp += 6;
 		}
 	}
-	bool result = LoadIndexed(game, vertices, sizeof(NormalVertex), totalVertices,
+	bool result = this->LoadIndexed(game, vertices, sizeof(NormalVertex), totalVertices,
 		D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST, indices, totalIndices, dynamic);
 	delete[] vertices;
 	delete[] indices;
@@ -339,7 +339,7 @@ bool Mesh::LoadCube(Game* game, XMFLOAT4 color, bool dynamic)
 		4, 7, 5, 7, 6, 5,
 		2, 1, 6, 1, 5, 6
 	};
-	return LoadIndexed(game, vertices, sizeof(ColorVertex), ARRAYSIZE(vertices),
+	return this->LoadIndexed(game, vertices, sizeof(ColorVertex), ARRAYSIZE(vertices),
 		D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST, indices, ARRAYSIZE(indices), dynamic);
 }
 
@@ -386,7 +386,7 @@ bool Mesh::LoadCube(Game* game, bool dynamic)
 		16, 17, 18, 16, 18, 19,
 		20, 21, 22, 20, 22, 23
 	};
-	return LoadIndexed(game, vertices, sizeof(NormalVertex), ARRAYSIZE(vertices),
+	return this->LoadIndexed(game, vertices, sizeof(NormalVertex), ARRAYSIZE(vertices),
 		D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST, indices, ARRAYSIZE(indices), dynamic);
 }
 
@@ -403,7 +403,7 @@ bool Mesh::LoadQuad(Game* game, XMFLOAT4 color, bool dynamic)
 	{
 		0, 1, 2, 2, 3, 0
 	};
-	return LoadIndexed(game, vertices, sizeof(ColorVertex), ARRAYSIZE(vertices),
+	return this->LoadIndexed(game, vertices, sizeof(ColorVertex), ARRAYSIZE(vertices),
 		D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST, indices, ARRAYSIZE(indices), dynamic);
 }
 
@@ -420,7 +420,7 @@ bool Mesh::LoadQuad(Game* game, bool dynamic)
 	{
 		0, 1, 2, 2, 3, 0
 	};
-	return LoadIndexed(game, vertices, sizeof(NormalVertex), ARRAYSIZE(vertices),
+	return this->LoadIndexed(game, vertices, sizeof(NormalVertex), ARRAYSIZE(vertices),
 		D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST, indices, ARRAYSIZE(indices), dynamic);
 }
 
@@ -533,7 +533,7 @@ bool Mesh::MapVertices(void** resourceData)
 	if (!_dynamic)
 		return false;
 
-	return MapBuffer(_vertexBuffer, resourceData);
+	return this->MapBuffer(_vertexBuffer, resourceData);
 }
 
 void Mesh::UnMapVertices()
@@ -541,15 +541,15 @@ void Mesh::UnMapVertices()
 	if (!_dynamic)
 		return;
 
-	UnMapBuffer(_vertexBuffer);
+	this->UnMapBuffer(_vertexBuffer);
 }
 
 bool Mesh::MapInstances(void** resourceData)
 {
-	return MapBuffer(_instanceBuffer, resourceData);
+	return this->MapBuffer(_instanceBuffer, resourceData);
 }
 
 void Mesh::UnMapInstances()
 {
-	UnMapBuffer(_instanceBuffer);
+	this->UnMapBuffer(_instanceBuffer);
 }

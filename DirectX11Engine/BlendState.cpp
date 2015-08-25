@@ -14,7 +14,7 @@ BlendState::BlendState(BlendType blendType)
 
 BlendState::~BlendState()
 {
-	Release();
+	this->Release();
 }
 
 void BlendState::Release()
@@ -25,6 +25,6 @@ void BlendState::Release()
 
 void BlendState::SetBlendType(BlendType blendType)
 {
-	Release();
+	this->Release();
 	_blendType = blendType;
 }

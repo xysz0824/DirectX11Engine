@@ -12,7 +12,7 @@ SpriteFont::SpriteFont()
 
 SpriteFont::~SpriteFont()
 {
-	Release();
+	this->Release();
 }
 
 bool SpriteFont::Load(Game* game, char* filePath, float fontSize)

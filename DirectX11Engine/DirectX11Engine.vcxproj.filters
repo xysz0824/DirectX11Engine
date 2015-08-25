@@ -22,43 +22,46 @@
     <Filter Include="头文件\Base">
       <UniqueIdentifier>{1c27c308-89a6-44cf-8501-d34e2a600e23}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\Engine">
+      <UniqueIdentifier>{d979346d-3b3f-4620-b1f7-9d7f23c2b21c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="WinMain.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="MyDemo.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Sprite.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="Effect.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="Mesh.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="SpriteFont.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="Texture2D.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="DirectX11Game.cpp">
-      <Filter>源文件</Filter>
+    <ClCompile Include="BlendState.cpp">
+      <Filter>源文件\Engine</Filter>
     </ClCompile>
     <ClCompile Include="Camera.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="BlendState.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="RasterizerState.cpp">
-      <Filter>源文件</Filter>
+      <Filter>源文件\Engine</Filter>
     </ClCompile>
     <ClCompile Include="DepthStencilState.cpp">
-      <Filter>源文件</Filter>
+      <Filter>源文件\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectX11Game.cpp">
+      <Filter>源文件\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Effect.cpp">
+      <Filter>源文件\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Mesh.cpp">
+      <Filter>源文件\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="RasterizerState.cpp">
+      <Filter>源文件\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Sprite.cpp">
+      <Filter>源文件\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="SpriteFont.cpp">
+      <Filter>源文件\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture2D.cpp">
+      <Filter>源文件\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="WinMain.cpp">
+      <Filter>源文件\Engine</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

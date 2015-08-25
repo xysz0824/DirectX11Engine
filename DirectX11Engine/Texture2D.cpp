@@ -12,7 +12,7 @@ Texture2D::Texture2D()
 
 Texture2D::~Texture2D()
 {
-	Release();
+	this->Release();
 }
 
 bool Texture2D::Create(Game* game, int width, int height)
@@ -63,7 +63,7 @@ bool Texture2D::Create(Game* game, int width, int height)
 		return false;
 
 	//Create color map sampler.
-	if (!CreateSampler(device))
+	if (!this->CreateSampler(device))
 		return false;
 
 	//Get width and height. 
@@ -88,7 +88,7 @@ bool Texture2D::Load(Game* game, char* filePath)
 		return false;
 
 	//Create color map sampler.
-	if (!CreateSampler(device))
+	if (!this->CreateSampler(device))
 		return false;
 
 	//Get width and height. 
@@ -99,7 +99,7 @@ bool Texture2D::Load(Game* game, char* filePath)
 	colorTex->Release();
 	if (colorTexDesc.ArraySize > 1)
 	{
-		Release();
+		this->Release();
 		return false;
 	}
 	_width = colorTexDesc.Width;
