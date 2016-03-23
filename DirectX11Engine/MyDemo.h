@@ -5,6 +5,7 @@
 #include "SpriteFont.h"
 #include "Effect.h"
 #include "Texture2D.h"
+using namespace Engine;
 
 class MyDemo : public DirectX11Game
 {
